@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Orbitron", sans-serif;
+}
+
+header {
+  width: 100%;
+  background: #eb4d4b;
+  height: auto;
+}
+
+.nav {
+  text-align: right;
+  height: auto;
+  line-height: 70px;
+}
+
+.menu {
+  margin: 0 30px 0 0;
+}
+
+.menu span {
+  color: yellow;
+}
+
+.menu a {
+  clear: right;
+  text-decoration: none;
+  color: #fff;
+  margin: 0 10px;
+  line-height: 70px;
+}
+
+label {
+  margin: 0 40px 0 0;
+  font-size: 26px;
+  line-height: 70px;
+  display: none;
+  width: 26px;
+  float: right;
+  color: #fff;
+}
+
+#toggle {
+  display: none;
+}
+
+.logo {
+  float: left;
+  clear: left;
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
+  margin-left: 20px;
+  position: relative;
+  top: 3px;
+}
+
+#trivia-outter {
+  background: #eb4d4b;
+  height: 100vh;
+}
+
+#trivia-outter div .headphone {
+  width: 150px;
+}
+
+.prompt-clock-display {
+  width: 294px;
+  margin: 0 auto;
+  padding-top: 12%;
+}
+
+.prompt-clock-display span {
+  font-family: "Orbitron", sans-serif;
+  font-size: 50px;
+  color: #00000063;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 94%;
+}
+
+.prompt-inner {
+  display: grid;
+  grid-template-columns: 70px 150px 70px;
+}
+
+.prompt-inner .next .nxt-btn,
+.prompt-inner .prev .nxt-btn {
+  width: 20px;
+  position: relative;
+  top: 100px;
+}
+
+.prompt-inner .next {
+  margin-left: 50px;
+}
+
+.prompt-inner .prev {
+  margin-right: 50px;
+}
+
+.signature {
+  height: 50px;
+  text-align: center;
+  padding: 25px;
+  background: #eb4d4b;
+  font-family: "Orbitron", sans-serif;
+  color: #00000073;
+}
+
+#divOuter {
+  width: 190px;
+  overflow: hidden;
+}
+
+footer {
+  height: 10vh;
+}
+
+@media only screen and (max-width: 550px) {
+  label {
+    display: block;
+    cursor: point;
+  }
+
+  .menu {
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .menu a {
+    display: block;
+    border-bottom: 1px solid #983d3d70;
+    margin: 0;
+  }
+
+  #toggle:checked + .menu {
+    display: block;
+  }
+
+  .prompt-clock-display {
+    padding-top: 26%;
+  }
+}
+
+/* #eb4d4b */
+/* font-family: 'Orbitron', sans-serif; */
