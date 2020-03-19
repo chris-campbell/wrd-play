@@ -6,18 +6,38 @@ import Prev from "./img/prev.png";
 import "./reset.css";
 import "./normalize.css";
 import "../Form/Form.css";
+import Timer from "../Timer/Timer";
 
-class Board extends Component {
-  state = {};
+class Board extends React.Component {
+  state = {
+    // prettier-ignore
+    words: [ "this", "friends", "group", "kind", "listen", "from", "have",
+             "knew", "live", "name", "happy", "again", "learn", "night", "great",
+             "four", "love", "most", "off", "people", "right", "mother", "watch",
+             "where", "work", "what", "write", "walk" ]
+  };
+
+  randomWord = () => {
+    var word = this.state.words[
+      Math.floor(Math.random() * this.state.words.length)
+    ];
+    return word;
+  };
 
   render() {
+    const word = this.randomWord();
     return (
       <main id="trivia-outter">
         <section className="trivia-inner">
           <div className="prompt-clock-display">
             <div className="prompt-inner">
               <div className="prev">
-                <img alt="prev-button" className="nxt-btn" src={Prev} />
+                <img
+                  alt="prev-button"
+                  onClick={this.randomWord}
+                  className="nxt-btn"
+                  src={Prev}
+                />
               </div>
               <img
                 alt="headphone"
@@ -31,11 +51,11 @@ class Board extends Component {
               <div className="next">
                 <img alt="next-button" className="nxt-btn" src={Next} />
               </div>
-              <span>00:15</span>
+              <Timer />
             </div>
           </div>
         </section>
-        <Form />
+        <Form randomword={word} />
       </main>
     );
   }

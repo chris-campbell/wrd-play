@@ -1,34 +1,4 @@
-input[type="text"] {
-  height: 45px;
-  width: 6%;
-  max-width: 32px;
-  min-width: 32px;
-  font-size: 25px;
-  margin-left: 5px;
-  text-align: center;
-  border: 1px solid #8c2f2d;
-  background: #8c2f2d;
-  color: #fff;
-  /* margin: 9px 0; */
-  border-radius: 5px;
-  /* pointer-events: none; */
-  -webkit-box-shadow: 2px 2px 5px -1px rgba(64, 64, 64, 1);
-  -moz-box-shadow: 2px 2px 5px -1px rgba(64, 64, 64, 1);
-  box-shadow: 2px 2px 5px -1px rgb(0, 0, 0);
-}
-
-input[type="text"]::-webkit-inner-spin-button,
-input[type="text"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-form {
+#word-input {
   text-align: center;
   margin-top: 40px;
-}
-
-input:focus {
-  outline: none !important;
-  border: 2px solid yellow;
 }

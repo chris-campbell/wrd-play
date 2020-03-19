@@ -1,0 +1,30 @@
+.input-box {
+  cursor: pointer;
+  height: 45px;
+  width: 6%;
+  max-width: 32px;
+  min-width: 32px;
+  font-size: 25px;
+  margin-left: 5px;
+  text-align: center;
+  border: 1px solid #8c2f2d !important;
+  background: #8c2f2d !important;
+  color: #fff;
+  /* margin: 9px 0; */
+  border-radius: 5px;
+  /* pointer-events: none; */
+  -webkit-box-shadow: 2px 2px 5px -1px rgba(64, 64, 64, 1);
+  -moz-box-shadow: 2px 2px 5px -1px rgba(64, 64, 64, 1);
+  box-shadow: 2px 2px 5px -1px rgb(0, 0, 0);
+}
+
+.input-box::-webkit-inner-spin-button,
+.input-box::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-box:focus {
+  outline: none !important;
+  border: 2px solid yellow !important;
+}
