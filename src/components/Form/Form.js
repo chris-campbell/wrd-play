@@ -45,42 +45,61 @@ class Form extends React.Component {
 
   onKeyUpEvent = (index, e) => {
     let word = this.props.randomword;
-
     if (this.getInputElement(index).value.length === 1) {
       if (
         this.state.typedWord.join("") !== word &&
         this.state.typedWord.length < word.length
       ) {
-        this.setState(
-          {
-            typedWord: [
-              ...this.state.typedWord,
-              ...this.getInputElement(index).value
-            ]
-          },
-          () => {
-            if (this.state.typedWord.join("") === word) {
-              this.getInputElement(index).blur();
-              // Submit code
-              alert("Correct, Great job!");
-            }
-          }
-        );
-        if (this.getInputElement(index + 1) !== undefined) {
-          this.getInputElement(index + 1).focus();
-        }
+        this.saveTypedLetter(index, word);
+        this.nextFocus(index);
       }
     }
+    this.deleteTypedLetter(e, index, word);
+  };
+
+  saveTypedLetter(index, word) {
+    this.setState(
+      {
+        typedWord: [
+          ...this.state.typedWord,
+          ...this.getInputElement(index).value
+        ]
+      },
+      () => {
+        this.isSpellingCorrect(word, index);
+      }
+    );
+  }
+
+  deleteTypedLetter = (e, index, word) => {
     // Remove letter from input on delete
     // and focus on previous input
     if (e.keyCode === 8) {
       if (this.state.typedWord.join("") !== word) {
         this.state.typedWord.pop();
-        if (this.getInputElement(index - 1) !== undefined) {
-          this.getInputElement(index - 1).focus();
-        }
+        this.prevFocus(index);
         this.setState({ typedWord: this.state.typedWord });
       }
+    }
+  };
+
+  isSpellingCorrect = (word, index) => {
+    if (this.state.typedWord.join("") === word) {
+      this.getInputElement(index).blur();
+      // Submit code
+      alert("Correct, Great job!");
+    }
+  };
+
+  prevFocus = index => {
+    if (this.getInputElement(index - 1) !== undefined) {
+      this.getInputElement(index - 1).focus();
+    }
+  };
+
+  nextFocus = index => {
+    if (this.getInputElement(index + 1) !== undefined) {
+      this.getInputElement(index + 1).focus();
     }
   };
 
